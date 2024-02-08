@@ -5,6 +5,7 @@ A simple command line interpreter
 import cmd
 import models
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 import shlex
 
@@ -14,7 +15,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     methods = ['create', 'show', 'destroy', 'all', 'update']
     __classes = [
-        'BaseModel'
+        'BaseModel',
+        'User'
     ]
 
     def precmd(self, line: str) -> str:

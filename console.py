@@ -4,23 +4,33 @@ A simple command line interpreter
 """
 import cmd
 import models
+import shlex
 from models.base_model import BaseModel
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 from models import storage
-import shlex
 
 
 class HBNBCommand(cmd.Cmd):
-    """The console interpreter class"""
+    """The console interpreter class."""
     prompt = '(hbnb) '
     methods = ['create', 'show', 'destroy', 'all', 'update']
     __classes = [
         'BaseModel',
-        'User'
+        'User',
+        'Place',
+        'State',
+        'City',
+        'Amenity',
+        'Review'
     ]
 
     def precmd(self, line: str) -> str:
-        """Handles custom implementation of commands"""
+        """Handles custom implementation of commands."""
         if not line or not line.endswith(')'):
             return line
 
@@ -32,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it to the JSON file
-        and prints the id
+        and prints the id.
         """
         args = parse(arg)
         if len(args) == 0:

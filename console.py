@@ -3,7 +3,6 @@
 A simple command line interpreter
 """
 import cmd
-import models
 import shlex
 from models.base_model import BaseModel
 from models.user import User
@@ -19,15 +18,15 @@ class HBNBCommand(cmd.Cmd):
     """The console interpreter class."""
     prompt = '(hbnb) '
     methods = ['create', 'show', 'destroy', 'all', 'update']
-    __classes = [
-        'BaseModel',
-        'User',
-        'Place',
-        'State',
-        'City',
-        'Amenity',
-        'Review'
-    ]
+    __classes = {
+        'BaseModel': BaseModel,
+        'User': User,
+        'Place': Place,
+        'State': State,
+        'City': City,
+        'Amenity': Amenity,
+        'Review': Review,
+    }
 
     def precmd(self, line: str) -> str:
         """Handles custom implementation of commands."""
@@ -130,12 +129,18 @@ class HBNBCommand(cmd.Cmd):
             print([str(obj) for obj in storage.all().values()])
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
+            return
         else:
-            print(
-                [str(obj) for obj in storage.all().values()
-                 if type(obj).__name__ == args[0]
-                 ]
-            )
+            class_name = args[0]
+            if class_name not in self.__classes:
+                print("** class doesn't exist **")
+                return
+            instances = storage.all().values()
+            class_instances = [
+                str(instance) for instance in instances
+                if isinstance(instance, self.__classes[class_name])
+            ]
+            print(class_instances)
 
     @staticmethod
     def help_all():

@@ -19,6 +19,15 @@ class FileStorage():
     """
     __file_path = 'file.json'
     __objects = {}
+    __classes = {
+        'BaseModel': BaseModel,
+        'User': User,
+        'State': State,
+        'Amenity': Amenity,
+        'City': City,
+        'Place': Place,
+        'Review': Review
+    }
 
     def all(self):
         """A public instance method to the storage class
@@ -54,6 +63,6 @@ class FileStorage():
                 loaded_objs = json.load(json_file)
                 for key, value in loaded_objs.items():
                     cls = value['__class__']
-                    self.new(eval('{}({})'.format(cls, '**value')))
+                    self.__objects[key] = self.__classes[cls](**value)
         except FileNotFoundError:
             pass

@@ -7,8 +7,6 @@ __pycache__/
 *.json
 *.sh
 
-# ignore these files
-
 !/**/
 !*.py
 !.gitignore

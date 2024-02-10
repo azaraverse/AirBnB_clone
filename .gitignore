@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ignore .json and .sh files
+*.json
+*.sh
+
+# ignore these files
+
+!/**/
+!*.py
+!.gitignore
+!AUTHORS
+!README.md

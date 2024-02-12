@@ -234,7 +234,7 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
-    def do_help(self, arg: str) -> bool | None:
+    def do_help(self, arg: str):
         """Displays help information"""
         return super().do_help(arg)
 

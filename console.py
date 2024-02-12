@@ -1,5 +1,21 @@
 #!/usr/bin/python3
-"""A simple command line interpreter that implements commands."""
+"""A simple command line interpreter that implements commands.
+
+This module provides a command line interpreter class that allows users to
+interact with a system through a command line interface. It implements
+various commands for manipulating data stored in the system, such as
+creating, updating, and deleting objects of different types.
+
+Attributes:
+    None
+
+Classes:
+    HBNBCommand: A command line interpreter class that implements various
+    commands.
+
+Functions:
+    None
+"""
 
 import cmd
 import shlex

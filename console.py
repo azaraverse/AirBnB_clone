@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-A simple command line interpreter that implements
-commands.
-"""
+"""A simple command line interpreter that implements commands."""
+
 import cmd
 import shlex
 from models.base_model import BaseModel

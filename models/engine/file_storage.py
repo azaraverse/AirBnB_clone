@@ -14,7 +14,7 @@ from models.place import Place
 from models.review import Review
 
 
-class FileStorage():
+class FileStorage:
     """A storage class that serialises instances to a JSON file
     and deserialises a JSON file to instances
     """
@@ -58,12 +58,13 @@ class FileStorage():
         """A public instance method to the storage class that deserialises
         the JSON file to '__objects' if the JSON file exists."""
         try:
+            loaded_objs = {}
             with open(
                 self.__file_path, 'r', encoding='UTF-8'
             ) as json_file:
                 loaded_objs = json.load(json_file)
                 for key, value in loaded_objs.items():
                     cls = value['__class__']
-                    self.__objects[key] = self.__classes[cls](**value)
+                    self.all()[key] = self.__classes[cls](**value)
         except FileNotFoundError:
             pass

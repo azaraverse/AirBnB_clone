@@ -250,7 +250,7 @@ class HBNBCommand(cmd.Cmd):
 
 
 def parse(line):
-    """Handles line parsing logic using shell logic"""
+    """Handles command line parsing using shell logic"""
     return shlex.split(line)
 
 

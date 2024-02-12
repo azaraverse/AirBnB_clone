@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A simple command line interpreter
+A simple command line interpreter that implements
+commands.
 """
 import cmd
 import shlex
@@ -16,6 +17,8 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """The console interpreter class."""
+
+    intro = "Welcome to Azara's hbnb console!"
     prompt = '(hbnb) '
     methods = ['create', 'show', 'destroy', 'all', 'update']
     __classes = {
@@ -33,9 +36,30 @@ class HBNBCommand(cmd.Cmd):
         if not line or not line.endswith(')'):
             return line
 
+        flag = 1
+        for classs in self.__classes:
+            for method in self.methods:
+                if line.startswith(f'{classs}.{method}'):
+                    flag = 0
+        if flag:
+            return line
+
+        temp = ''
         for method in self.methods:
-            if line.startswith(method + '('):
+            temp = line.replace('(', '.').replace(')', '.').split('.')
+            if temp[0] not in self.__classes:
+                return ' '.join(temp)
+            while temp[-1] == '':
+                temp.pop()
+            if len(temp) < 2:
                 return line
+            if len(temp) == 2:
+                temp = f'{temp[1]} {temp[0]}'
+            else:
+                temp = f'{temp[1]} {temp[0]} {temp[2]}'
+
+            if temp.startswith(method):
+                return temp
 
         return ''
 
@@ -154,25 +178,32 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """This updates an instance based on the class name and id."""
         args = parse(arg)
-        if len(args) < 3:
+        if len(args) == 1:
             print('** instance id missing **')
             return
         if args[0] not in self.__classes:
             print("** class doesn't exist **")
             return
+        if len(args) == 0:
+            print('** class name missing **')
+            return
         key = f'{args[0]}.{args[1]}'
-        if key not in storage.all():
+        try:
+            instance = storage.all()[key]
+            if len(args) == 2:
+                print('** attribute name missing **')
+                return
+            if len(args) == 3:
+                print('** value missing **')
+                return
+            try:
+                eval(args[3])
+            except (SyntaxError, NameError):
+                args[3] = f"'{args[3]}'"
+            setattr(instance, args[2], eval(args[3]))
+            instance.save()
+        except KeyError:
             print('** no instance found **')
-            return
-        instance = storage.all()[key]
-        if len(args) < 3:
-            print('** attribute name missing **')
-            return
-        if len(args) < 4:
-            print('** value missing **')
-            return
-        setattr(instance, args[2], args[3])
-        instance.save()
 
     @staticmethod
     def help_update():

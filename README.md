@@ -17,7 +17,7 @@ Python 3.8.5 or later
     ```bash
     azara@Ubuntu:~/AirBnB_clone$ ./console.py
     (hbnb) all MyModel
-    ** class doesnt exist **
+    ** class doesn\'t exist **
     (hbnb)
     (hbnb) show BaseModel
     ** instance id missing **
@@ -29,7 +29,7 @@ Python 3.8.5 or later
     0f4d0985-d137-4e89-abb6-7e7a8604b9b2
     (hbnb)
     (hbnb) all BaseModel
-    ["[BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {'id': '0f4d0985-d137-4e89-abb6-7e7a8604b9b2', 'created_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), 'updated_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684328)}"]
+    [\"[BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {\'id\': \'0f4d0985-d137-4e89-abb6-7e7a8604b9b2\', \'created_at\': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), \'updated_at\': datetime.datetime(2024, 2, 8, 16, 49, 7, 684328)}\"]
     (hbnb)
     (hbnb) show BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2
     [BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {'id': '0f4d0985-d137-4e89-abb6-7e7a8604b9b2', 'created_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), 'updated_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684328)}
@@ -37,7 +37,7 @@ Python 3.8.5 or later
     (hbnb) destroy
     ** class name missing **
     (hbnb)
-    (hbnb) update BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2 first_name "Azara"
+    (hbnb) update BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2 first_name \"Azara\"
     (hbnb) show BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2
     [BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {'id': '0f4d0985-d137-4e89-abb6-7e7a8604b9b2', 'created_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), 'updated_at': datetime.datetime(2024, 2, 8, 16, 50, 5, 779864), 'first_name': 'Azara'}
     (hbnb)
@@ -45,7 +45,7 @@ Python 3.8.5 or later
     3fa01046-9a52-4ca7-a041-7c1e0cd98228
     (hbnb)
     (hbnb) all BaseModel
-    ["[BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {'id': '0f4d0985-d137-4e89-abb6-7e7a8604b9b2', 'created_at': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), 'updated_at': datetime.datetime(2024, 2, 8, 16, 50, 5, 779864), 'first_name': 'Azara'}", "[BaseModel] (3fa01046-9a52-4ca7-a041-7c1e0cd98228) {'id': '3fa01046-9a52-4ca7-a041-7c1e0cd98228', 'created_at': datetime.datetime(2024, 2, 8, 16, 50, 43, 634990), 'updated_at': datetime.datetime(2024, 2, 8, 16, 50, 43, 635017)}"]
+    [\"[BaseModel] (0f4d0985-d137-4e89-abb6-7e7a8604b9b2) {\'id\': \'0f4d0985-d137-4e89-abb6-7e7a8604b9b2\', \'created_at\': datetime.datetime(2024, 2, 8, 16, 49, 7, 684312), \'updated_at\': datetime.datetime(2024, 2, 8, 16, 50, 5, 779864), \'first_name\': \'Azara\'}\", \"[BaseModel] (3fa01046-9a52-4ca7-a041-7c1e0cd98228) {\'id\': \'3fa01046-9a52-4ca7-a041-7c1e0cd98228\', \'created_at\': datetime.datetime(2024, 2, 8, 16, 50, 43, 634990), \'updated_at\': datetime.datetime(2024, 2, 8, 16, 50, 43, 635017)}\"]
     (hbnb)
     (hbnb) destroy BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2
     (hbnb) show BaseModel 0f4d0985-d137-4e89-abb6-7e7a8604b9b2
@@ -56,7 +56,7 @@ Python 3.8.5 or later
 4. Run the command `$ echo "help" | ./console.py` to execute the help command in non-interactive mode.
     It should display this example screen format;
     ```bash
-    $   echo "help" | ./console.py
+    $   echo \"help\" | ./console.py
     (hbnb)
 
     Documented commands (type help <topic>):

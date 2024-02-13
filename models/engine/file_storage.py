@@ -58,12 +58,11 @@ class FileStorage:
         """A public instance method to the storage class that deserialises
         the JSON file to '__objects' if the JSON file exists."""
         try:
-            loaded_objs = {}
             with open(
                 self.__file_path, 'r', encoding='UTF-8'
             ) as json_file:
-                loaded_objs = json.load(json_file)
-                for key, value in loaded_objs.items():
+                self.__objects = json.load(json_file)
+                for key, value in self.__objects.items():
                     cls = value['__class__']
                     self.all()[key] = self.__classes[cls](**value)
         except FileNotFoundError:

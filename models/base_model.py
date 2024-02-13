@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""BaseModel for AirBnb_clone
+"""BaseModel class for AirBnb_clone
 """
 import uuid
 from datetime import datetime
@@ -47,7 +47,7 @@ class BaseModel():
         """Returns a dictionary containing all keys/values of __dict__
         of the instance.
         """
-        obj_dict = self.__dict__.copy()
+        obj_dict = dict(self.__dict__)
         obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()

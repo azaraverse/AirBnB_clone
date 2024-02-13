@@ -195,29 +195,39 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 1:
             print('** instance id missing **')
             return
-        if args[0] not in self.__classes:
+        elif args[0] not in self.__classes:
             print("** class doesn't exist **")
             return
-        if len(args) == 0:
+        elif len(args) == 0:
             print('** class name missing **')
             return
-        key = f'{args[0]}.{args[1]}'
-        try:
+        else:
+            key = f'{args[0]}.{args[1]}'.strip(',')
+            print(storage.all().keys())
             instance = storage.all()[key]
+            if key not in storage.all():
+                print('** no instance found **')
+                return
+            # print('Instance retrieved:', storage.all().get(key))
             if len(args) == 2:
                 print('** attribute name missing **')
                 return
-            if len(args) == 3:
+            elif len(args) == 3:
                 print('** value missing **')
                 return
-            try:
-                eval(args[3])
-            except (SyntaxError, NameError):
-                args[3] = f"'{args[3]}'"
-            setattr(instance, args[2], eval(args[3]))
-            instance.save()
-        except KeyError:
-            print('** no instance found **')
+            else:
+                try:
+                    attribute_type = type(getattr(instance, args[2]))
+                    args[3] = attribute_type(args[3])
+                except AttributeError:
+                    pass
+                try:
+                    eval(args[3])
+                except (SyntaxError, NameError):
+                    args[3] = f"'{args[3]}'"
+                print(args[2])
+                setattr(instance, args[2].strip('," '), eval(args[3]))
+                instance.save()
 
     @staticmethod
     def help_update():

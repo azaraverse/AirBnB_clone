@@ -203,7 +203,7 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             key = f'{args[0]}.{args[1]}'.strip(',')
-            print(storage.all().keys())
+            # print(storage.all().keys())
             instance = storage.all()[key]
             if key not in storage.all():
                 print('** no instance found **')
@@ -225,7 +225,7 @@ class HBNBCommand(cmd.Cmd):
                     eval(args[3])
                 except (SyntaxError, NameError):
                     args[3] = f"'{args[3]}'"
-                print(args[2])
+                # print(args[2])
                 setattr(instance, args[2].strip('," '), eval(args[3]))
                 instance.save()
 

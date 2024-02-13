@@ -244,10 +244,6 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
-    def do_help(self, arg: str):
-        """Displays help information"""
-        return super().do_help(arg)
-
     def do_EOF(self, arg):
         """Exits the program on Ctrl+D"""
         print()

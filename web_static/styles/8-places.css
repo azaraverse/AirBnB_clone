@@ -42,7 +42,7 @@
     float: left;
     width: 65%;
     padding-left: 15%;
-    margin-top: 10px;
+    margin-top: 14px;
 }
 
 .places article .price_by_night {
@@ -55,7 +55,7 @@
     line-height: 16px;
     font-size: 22px;
     float: right;
-    margin: 0px;
+    margin-bottom: 4%;
 }
 /*
 .places article .price_by_night {

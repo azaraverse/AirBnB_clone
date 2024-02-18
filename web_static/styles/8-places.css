@@ -42,7 +42,7 @@
     float: left;
     width: 65%;
     padding-left: 15%;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .places article .price_by_night {
@@ -57,11 +57,11 @@
     float: right;
     margin: 0px;
 }
-
+/*
 .places article .price_by_night {
     margin: 11px 5px 5px 5px;
 }
-
+*/
 .places article .information {
     height: 80px;
     border-top: 1px solid #ddd;

@@ -1,0 +1,114 @@
+/*  =============================
+    align places to fit container
+    =============================
+*/
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  ===============================
+    typography setting for h1 title
+    ===============================
+*/
+.places h1 {
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/*  ===========================
+    align articles under places
+    ===========================
+*/
+.places article {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ff5a5f;
+    border-radius: 4px;
+}
+
+/*  ===============================
+    typography setting for articles
+    ===============================
+*/
+.places article h2 {
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    width: 65%;
+    padding-left: 15%;
+    margin-top: 15px;
+}
+
+.places article .price_by_night {
+    color: #ff5a5f;
+    border: 4px solid #ff5a5f;
+    border-radius: 50%;
+    text-align: center;
+    min-width: 60px;
+    height: 60px;
+    line-height: 8px;
+    font-size: 26px;
+    float: right;
+    margin: 0px;
+}
+
+.places article .price_by_night {
+    margin: 11px, 5px, 5px, 5px;
+}
+
+.places article .information {
+    height: 80px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    clear: both;
+}
+
+.places article .information .max_guest {
+    width: 100px;
+    padding-top: 45px;
+    background-image: url(../images/icon_group.png);
+    background-repeat: no-repeat;
+    background-position: center left 5px;
+    background-position-y: 10px;
+    background-size: auto;
+}
+
+.places article .information .number_rooms {
+    width: 100px;
+    padding-top: 45px;
+    background-image: url(../images/icon_bed.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 14px;
+    background-position-y: 10px;
+    background-size: auto;
+}
+
+.places article .information .number_bathrooms {
+    width: 100px;
+    padding-top: 45px;
+    background-image: url(../images/icon_bath.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 14px;
+    background-position-y: 10px;
+    background-size: auto;
+}
+
+.places article .user {
+    margin-top: 20px;
+}
+
+.places article .description {
+    margin-bottom: 10px;
+}

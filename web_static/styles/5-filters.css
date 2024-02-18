@@ -1,0 +1,83 @@
+/*  =======
+    filters
+    =======
+*/
+.filters {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*  ===================================
+    locations and amenities positioning
+    ===================================
+*/
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    margin-left: 5%;
+}
+
+/*  ====================
+    locations borderline
+    ====================
+*/
+.locations {
+    border-right: 1px solid #ddd;
+}
+
+/*  ==================================
+    amenities positioning after border
+    ==================================
+*/
+.amenities {
+    margin-left: -12%;
+}
+
+/*  ================================
+    typography setting for h3 levels
+    ================================
+*/
+.locations h3, .amenities h3 {
+    font-weight: 600;
+    margin-top: 17px;
+    margin-bottom: 0px;
+}
+
+/*  ================================
+    typography setting for h4 levels
+    ================================
+*/
+.locations h4, .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+/*  ====================
+    search button design
+    ====================
+*/
+button {
+    font-size: 18px;
+    background-color: #ff5a5f;
+    color: #fff;
+    height: 48px;
+    width: 20%;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 30px;
+}
+
+/*  ================================
+    search button mouse hover effect
+    ================================
+*/
+button:hover {
+    opacity: 90%;
+}

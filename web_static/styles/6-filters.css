@@ -1,0 +1,151 @@
+/*  =======
+    filters
+    =======
+*/
+.filters {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*  ===================================
+    locations and amenities positioning
+    ===================================
+*/
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    margin-left: 5%;
+}
+
+/*  ==================================
+    drop down on filters hover effects
+    ==================================
+*/
+.locations:hover #locations-ul {
+    display: block;
+    visibility: visible;
+    opacity: 95%;
+    background-color: #fafafa;
+    z-index: 100;
+}
+
+.amenities:hover #amenities-ul {
+    display: block;
+    visibility: visible;
+    opacity: 95%;
+    background-color: #fafafa;
+    z-index: 100;
+}
+
+#locations-ul {
+    display: none;
+    visibility: hidden;
+    list-style: none;
+    margin-left: -50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#locations-ul li {
+    margin-bottom: 2px;
+}
+
+#amenities-ul {
+    display: none;
+    visibility: hidden;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: -50px;
+}
+
+#amenities-ul li {
+    margin-bottom: 2px;
+    margin-left: 3%;
+}
+
+.popover {
+    background-color: #fafafa;
+    width: 104.5%;
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left: -50px;
+    list-style: none;
+}
+
+.popover h2 {
+    font-size: 16px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.popover ul {
+    list-style: none;
+    margin-left: -7%;
+}
+
+/*  ====================
+    locations borderline
+    ====================
+*/
+.locations {
+    border-right: 1px solid #ddd;
+}
+
+/*  ==================================
+    amenities positioning after border
+    ==================================
+*/
+.amenities {
+    margin-left: -12%;
+}
+
+/*  ================================
+    typography setting for h3 levels
+    ================================
+*/
+.locations h3, .amenities h3 {
+    font-weight: 600;
+    margin-top: 17px;
+    margin-bottom: 0px;
+}
+
+/*  ================================
+    typography setting for h4 levels
+    ================================
+*/
+.locations h4, .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+/*  ====================
+    search button design
+    ====================
+*/
+button {
+    font-size: 18px;
+    background-color: #ff5a5f;
+    color: #fff;
+    height: 48px;
+    width: 20%;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 30px;
+}
+
+/*  ================================
+    search button mouse hover effect
+    ================================
+*/
+button:hover {
+    opacity: 90%;
+}
